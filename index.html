@@ -4,18 +4,31 @@
 <meta charset="UTF-8">
 <meta name = "viewport" content = "width = device-width, initial-scale = 1, user-scalable = no">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="js/img2canvas.js"></script>
+<style>
+img {
+	width: 300px;
+}
+canvas {
+	-webkit-transition: -webkit-transform .3s;
+}
+canvas:hover {
+	-webkit-transform: scale(.5);
+}
+
+</style>
 <script>
 $(function (){
-$("img").img2Canvas();
-})
+	for(var i=1; i<=300; i++) {
+		$('body').append(i+'<br>');
+		$('body').append($("<img src='img/photo.jpg?"+new Date().getTime()+"' alt>"));
+	}
+});
 </script>
 <title>IMG</title>
 </head>
 
 <body>
-<h1 style="font-size: 100%;">大きな画像を指定したサイズのcanvasに縮小するスクリプト</h1>
-<img src="img/photo.jpg" width="740" height="445" alt="">
+
 </body>
 </html>
 	
